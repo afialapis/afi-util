@@ -19,7 +19,7 @@ function mixin (behaviour, sharedBehaviour = {}) {
   for (let property of sharedKeys)
     Object.defineProperty(_mixin, property, {
       value: sharedBehaviour[property],
-      enumerable: sharedBehaviour.propertyIsEnumerable(property)
+      enumerable: Object.prototype.propertyIsEnumerable.call(sharedBehaviour, property)
     });
   Object.defineProperty(_mixin, Symbol.hasInstance, {
     value: (i) => !!i[typeTag]

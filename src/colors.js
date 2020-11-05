@@ -33,7 +33,7 @@ const WHITE       = (s) => _f(_WHITE, s)
 const GRAY        = (s) => _f(_GRAY, s)
 const DARK_GRAY   = (s) => _f(_DARK_GRAY, s)
 
-const uncolor = (s) => s.replace(/\u001b\[.*?m/g, '')
+const uncolor = (s) => s.replace(/\\u001b\[.*?m/g, '')
 
 function isTooDark(col) {
   try {
