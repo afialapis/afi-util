@@ -1,17 +1,16 @@
-import co from "co"
-import ES6Promise from 'es6-promise'
-//import assert from 'assert'
+import assert from 'assert'
+import {dates} from '../src'
 
-ES6Promise.polyfill()
-
-describe('Afi Util', function() {
+describe('Checking dates', function() {
 
   this.timeout(30000)
   
-  it("should do something.", co.wrap(function *(){
-    console.log('HEY')
+  it("NOW should be greater than TODAY", function () {
 
-    //assert.notEqual(A, B)
-  }))  
+    const now= dates.epoch()
+    const today= dates.day()
+
+    assert.strictEqual(now >= today, true)
+  })
 
 })

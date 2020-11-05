@@ -1,4 +1,6 @@
-if (process.env.BROWSER) {
+const isBrowser = (typeof window !== 'undefined')
+
+if (isBrowser) {
   console.silly  = console.log.bind(console, '%cSLY', 'color: #e0e0d1; font-weight: normal')
   console.debug  = console.log.bind(console, '%cDBG', 'color: #c2c2a3; font-weight: bold')
   console.verbose= console.log.bind(console, '%cVRB', 'color: #999966; font-weight: bold')

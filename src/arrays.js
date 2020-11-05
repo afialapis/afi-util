@@ -1,4 +1,4 @@
-const {parseNum} = require('./numbers')
+import {parseNum}  from './numbers'
 
 function chunkArray(myArray, chunk_size){
   let results = [];
