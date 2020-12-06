@@ -1,4 +1,16 @@
 
+// function hashCode(str) {
+//   let hash = 0, i, chr, len;
+//   if (str.length === 0) return hash;
+//   for (i = 0, len = str.length; i < len; i++) {
+//     chr = str.charCodeAt(i);
+//     hash = ((hash << 5) - hash) + chr;
+//     hash |= 0; // Convert to 32bit integer
+//   }
+//   return hash
+// }
+
+
 module.exports = function(target, key, descriptor) {
   const fType = descriptor.get ? 'get' : 'value';
   const fn = descriptor[fType];
@@ -17,7 +29,7 @@ module.exports = function(target, key, descriptor) {
         (arg  === void 0)                   ? 'undefined'         :
         (type === 'function')               ? arg                 :
         (type === 'object' && arg.id)       ? arg.id              :
-        (type === 'object' && arg.hashCode) ? arg.hashCode()      :
+        //(type === 'object' && arg.hashCode) ? arg.hashCode()      :
         (type === 'object')                 ? JSON.stringify(arg) :
         arg
       );

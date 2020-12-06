@@ -21,10 +21,7 @@ module.exports = {
     "node": true,
     "es6": true
   },
-  "globals": {
-		"Exception": true,
-		"uvl": false
-  },
+  "globals": {},
   "rules": {
 	"semi": 0,
 	"vars-on-top": 0,

@@ -1,3 +1,11 @@
+function _deepGet(obj, path) {
+  return path.split('.').reduce(function (prev, curr) {
+    return prev ? prev[curr] : undefined
+  }, obj || self)
+}
+
+
+
 function collMatches(coll, params) {
   const fdata = coll.filter((d) => {
     const _pflds = Object.keys(params)
@@ -23,6 +31,7 @@ function collMatches(coll, params) {
   return fdata
 }
 
+
 function collSort(coll, by, order) {
   if (by==undefined) {
     return coll
@@ -42,8 +51,8 @@ function collSort(coll, by, order) {
 
    if (typeof by == 'object') {
     
-    av = Object.deepGet(a, by.field)
-    bv = Object.deepGet(b, by.field)
+    av = _deepGet(a, by.field)
+    bv = _deepGet(b, by.field)
     av= by.map[av] || ''
     bv= by.map[bv] || ''
    } else if (typeof by == 'function') {
