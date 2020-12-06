@@ -15,20 +15,19 @@ if (isBrowser) {
   function logger(color, _name) {
     return function() {
       // Get arguments without deoptimizing v8
-      //const args = []
-      //for (let i = 0; i < arguments.length; i++) {
-      //  if (typeof arguments[i] === 'object') {
-      //    args.push(inspect(arguments[i], {
-      //      colors: true,
-      //      depth: 4,
-      //      breakLength: Infinity
-      //    }))
-      //  } else {
-      //    args.push(arguments[i])
-      //  }
-      //}
-      //const sargs=args.join(' ')
-      const sargs=arguments.join(' ')
+      const args = []
+      for (let i = 0; i < arguments.length; i++) {
+        // if (typeof arguments[i] === 'object') {
+        //   args.push(inspect(arguments[i], {
+        //     colors: true,
+        //     depth: 4,
+        //     breakLength: Infinity
+        //   }))
+        // } else {
+        args.push(arguments[i])
+        // }
+      }
+      const sargs=args.join(' ')
       const time= (new Date()).toString().substr(4, 20)
       console.log(time +': ' + color(sargs))
     }
@@ -36,20 +35,19 @@ if (isBrowser) {
   function qlogger(color) {
     return function () {
       // Get arguments without deoptimizing v8
-      //const args = []
-      //for (let i = 0; i < arguments.length; i++) {
-      //  if (typeof arguments[i] === 'object') {
-      //    args.push(inspect(arguments[i], {
-      //      colors: true,
-      //      depth: 4,
-      //      breakLength: Infinity
-      //    }))
-      //  } else {
-      //    args.push(arguments[i])
-      //  }
-      //}
-      //const qry = args[0].replace('Executing (default): ', '')
-      const qry = arguments[0].replace('Executing (default): ', '')
+      const args = []
+      for (let i = 0; i < arguments.length; i++) {
+        //if (typeof arguments[i] === 'object') {
+        //  args.push(inspect(arguments[i], {
+        //    colors: true,
+        //    depth: 4,
+        //    breakLength: Infinity
+        //  }))
+        //} else {
+        args.push(arguments[i])
+        //}
+      }
+      const qry = args[0].replace('Executing (default): ', '')
       const time= (new Date()).toString().substr(4, 20)
       console.log(time +': ' + color(qry))
     }

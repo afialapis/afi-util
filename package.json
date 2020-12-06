@@ -1,6 +1,6 @@
 {
   "name": "afi-util",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Some utilities used by Afialapis",
   "author": "Donato Lorenzo <donato@afialapis.com>",
   "contributors": [
