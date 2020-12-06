@@ -59,8 +59,8 @@ function collSort(coll, by, order) {
     av = by(a) || ''
     bv = by(b) || ''
    } else {
-    av = Object.deepGet(a, by)
-    bv = Object.deepGet(b, by)
+    av = _deepGet(a, by)
+    bv = _deepGet(b, by)
    }
    if (typeof av == 'string' && typeof bv == 'string') {
      av= av.toLowerCase()
