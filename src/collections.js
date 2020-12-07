@@ -1,3 +1,20 @@
+function objFilter(obj, func) {
+  let isNum= true
+  Object.keys(obj).map((k) => {
+    if (isNaN(parseInt(k))) {
+      isNum= false
+      return
+    }
+  })
+  const parseK = (k) => isNum ? parseInt(k) : k
+  let out= {}
+  Object.keys(obj)
+        .filter((key) => func(parseK(key), obj[key]))
+        .map((key) => out[parseK(key)]= obj[key])
+  return out
+}
+
+
 function _deepGet(obj, path) {
   return path.split('.').reduce(function (prev, curr) {
     return prev ? prev[curr] : undefined
@@ -116,4 +133,4 @@ function collMaxBy(coll, fld) {
 
 
 
-export { collMatches, collSort, collMaxBy}
+export { objFilter, collMatches, collSort, collMaxBy}
