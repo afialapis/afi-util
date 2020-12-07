@@ -1,10 +1,16 @@
 module.exports = {
   "root": true,
   "parser": "babel-eslint",
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": [
+	  "react",
+	  "react-hooks"
   ],
-  "settings": {},
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "ecmaVersion": 7,
     "sourceType": "module",
@@ -50,6 +56,15 @@ module.exports = {
 	"no-inner-declarations": 0,
 	"space-before-function-paren": 0,
 	"global-require": 0,
-  "no-empty": 0
+	"no-empty": 0,	
+	"react/jsx-indent": 0,
+	"react/jsx-no-bind": 0,
+	"react/jsx-wrap-multilines": 0,
+	"react/jsx-space-before-closing": 0,
+	"react/jsx-closing-bracket-location": 0,
+	"react/prop-types": 0,
+	"react/prefer-stateless-function": 0,
+  "react-hooks/rules-of-hooks": "error",
+  "react-hooks/exhaustive-deps": "warn"	
   }
 }
