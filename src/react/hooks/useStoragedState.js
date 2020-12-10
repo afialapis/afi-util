@@ -11,8 +11,10 @@ const getPersisted = (key, defValue) => {
   if (process.env.BROWSER) {
     const k= getStorageKey(key)
     const v= localStorage.getItem(k)
-    if (v!=undefined) {
+    try {
       return JSON.parse(v)
+    } catch(e) {
+      return undefined
     }
   }
   return defValue
