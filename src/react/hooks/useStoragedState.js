@@ -12,10 +12,11 @@ const getPersisted = (key, defValue) => {
     const k= getStorageKey(key)
     const v= localStorage.getItem(k)
     try {
-      return JSON.parse(v)
-    } catch(e) {
-      return undefined
-    }
+      const p= JSON.parse(v)
+      if (p!=undefined && p!=null) {
+        return p
+      }
+    } catch(e) {}
   }
   return defValue
 }
