@@ -11,6 +11,7 @@ import * as numbers from'./numbers'
 import * as obj from'./obj'
 import * as promises from'./promises'
 import * as strings from'./strings'
+import * as url from'./url'
 
 export {
   arrays,
@@ -26,4 +27,5 @@ export {
   obj,
   promises,
   strings,
+  url
 }
